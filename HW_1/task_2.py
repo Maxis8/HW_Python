@@ -4,11 +4,10 @@
 # Если хотя бы в одном случае отрезок окажется больше суммы двух других,
 # то треугольника с такими сторонами не существует.
 # Отдельно сообщить является ли треугольник разносторонним, равнобедренным или равносторонним
-
-a = int(input('nter side A: '))
-b = int(input('nter side B: '))
-c = int(input('nter side C: '))
-if a + b < c or a + c < b or b + c < a:
+a = int(input('Enter side A: '))
+b = int(input('Enter side B: '))
+c = int(input('Enter side C: '))
+if a + b < c or a + c < b or b + c < a or a == b == c == 0:
     print('Не существует')
 elif a == b == c:
     print('Равносторонний')
@@ -16,4 +15,3 @@ elif a == b or a == c or b == c:
     print('Равнобедренный')
 else:
     print('Разносторонний')
-

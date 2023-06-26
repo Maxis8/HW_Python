@@ -11,14 +11,3 @@ for i in range(2, A):
     for j in range(6, edge):
         print(f'{j} * {i:>2d} = {j * i:>2d}', end='       ')
     print('   ')
-
-
-
-
-
-
-
-
-
-
-

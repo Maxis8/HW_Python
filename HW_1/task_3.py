@@ -7,14 +7,13 @@ while True:
         print('Try again!!!: ')
     else:
         print(num)
-        if 1 < num < 4:
+        if num in (2, 3):
             print('Prime number!')
         else:
-            for i in range(2, (num//2)+1):
+            edge = (num ** 0.5)
+            for i in range(2, int(edge)+1):
                 if num % i == 0:
                     print('Composite number!')
                     break
             else:
                 print('Prime number!')
-
-
