@@ -20,5 +20,5 @@ while count < 10:
     count += 1
     print('Use attempts: ', count, '\n')
 else:
-    print('You loose...')
+    print('You loose....')
 
