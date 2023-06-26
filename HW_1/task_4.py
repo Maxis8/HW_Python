@@ -21,3 +21,4 @@ while count < 10:
     print('Use attempts: ', count, '\n')
 else:
     print('You loose...')
+
