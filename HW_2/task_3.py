@@ -15,6 +15,8 @@ def multi_fraction(n1, n2):
             b = int(b / i)
 
     res = f'{a}/{b}'
+    if b == 1 or a == 0:
+        res = a
     return res
 
 
@@ -32,15 +34,17 @@ def sum_fraction(k1, k2):
             c2 = int(c2 / i)
 
     res = f'{c}/{c2}'
+    if c2 == 1 or c == 0:
+        res = c
     return res
 
 
-a1 = '187/57'
-a2 = '169/1479'
+a1 = '1/2'
+a2 = '1/2'
 print(multi_fraction(a1, a2))
 print(sum_fraction(a1, a2))
-a1 = fractions.Fraction(187, 57)
-a2 = fractions.Fraction(169, 1479)
+a1 = fractions.Fraction(1, 2)
+a2 = fractions.Fraction(1, 2)
 print(f'{a1 * a2} ')
 print(f'{a1 + a2} ')
 
