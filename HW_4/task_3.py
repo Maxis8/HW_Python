@@ -6,10 +6,12 @@
 def to_swap(**kwargs):
     res = {}
     for key, value in kwargs.items():
-        res[str(value)] = key
+        if isinstance(value, (list, dict, set, bytearray)):
+            value = str(value)
+        res[value] = key
 
     return res
 
 
-print(to_swap(name='Sam', lastname='Whiskey', age=20, friends=['msr. Daniels', 'sr. Jerez', 'm. Cognac ']))
+print(to_swap(name='Sam', lastname='Whiskey', Age={20, 40, 60}, friends=['msr. Daniels', 'sr. Jerez', 'm. Cognac ']))
 
