@@ -9,7 +9,3 @@ bonus = ['10.25%', '12.75%', '15.2%']
 
 print({n: s * float(b[:-1]) / 100 for n, s, b in zip(staff, salary, bonus)})
 
-
-
-
-

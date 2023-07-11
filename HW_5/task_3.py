@@ -6,9 +6,9 @@ def fib():
         yield a
         a, b = b, a + b
 
+
 print(fib())
 d = iter(fib())
 print(next(d))
 print(next(d))
-print(next(d))
-print(next(d))
+

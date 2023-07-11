@@ -14,4 +14,3 @@ def path_split(ph):
 
 print(*path_split(path_all))
 
-
