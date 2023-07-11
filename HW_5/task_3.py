@@ -1,10 +1,14 @@
 # 3. Создайте функцию генератор чисел Фибоначчи (см. Википедию)
 
-def fib(n):
+def fib():
     a, b = 0, 1
-    for _ in range(n):
+    while True:
         yield a
         a, b = b, a + b
 
-
-print(*(fib(20)))
+print(fib())
+d = iter(fib())
+print(next(d))
+print(next(d))
+print(next(d))
+print(next(d))

@@ -2,15 +2,14 @@
 # имена str, ставка int, премия str с указанием процентов вида «10.25%».
 # В результате получаем словарь с именем в качестве ключа и суммой премии в качестве значения.
 # Сумма рассчитывается как ставка умноженная на процент премии
-staff = ['Tom', 'Steven', 'Skottina']
+staff = ['Tom', 'Steven', 'Scot']
 salary = [2000, 1900, 2800]
 bonus = ['10.25%', '12.75%', '15.2%']
 
 
-def get_bonus(n, s, b):
-    g = {n: s * float(b[:-1]) / 100 for n, s, b in zip(n, s, b)}
-    return g
+print({n: s * float(b[:-1]) / 100 for n, s, b in zip(staff, salary, bonus)})
 
 
-print(get_bonus(staff, salary, bonus))
+
+
 
