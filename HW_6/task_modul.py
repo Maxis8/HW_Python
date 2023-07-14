@@ -16,15 +16,12 @@ def eight_queens(position: list[list[int]]) -> bool:
     for i in range(Q):
         x.append(position[i][0])
         y.append(position[i][1])
-    correct = True
+
     for i in range(Q):
         for j in range(i + 1, Q):
             if x[i] == x[j] or y[i] == y[j] or abs(x[i] - x[j]) == abs(y[i] - y[j]):
-                correct = False
-    if correct:
-        return True
-    else:
-        return False
+                return False
+    return True
 
 
 def count_true_position(print_counter):
@@ -36,7 +33,7 @@ def count_true_position(print_counter):
         counter += 1
 
         while len(position) < Q:
-            lst = [random.randint(1, Q) for i in range(2)]
+            lst = [random.randint(1, Q) for _ in range(2)]
             if lst not in position:
                 position.append(lst)
 
