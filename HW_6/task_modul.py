@@ -11,15 +11,9 @@ Q = 8
 
 
 def eight_queens(position: list[list[int]]) -> bool:
-    x = []
-    y = []
-    for i in range(Q):
-        x.append(position[i][0])
-        y.append(position[i][1])
-
-    for i in range(Q):
-        for j in range(i + 1, Q):
-            if x[i] == x[j] or y[i] == y[j] or abs(x[i] - x[j]) == abs(y[i] - y[j]):
+    for num, item in enumerate(position):
+        for item2 in position[num + 1:]:
+            if item[0] == item2[0] or item[1] == item2[1] or abs(item[0] - item2[0]) == abs(item[1] - item2[1]):
                 return False
     return True
 
