@@ -3,7 +3,7 @@ import csv
 
 
 def get_num_csv(func):
-    lst = []
+
     csv_rand(100, 1, 100)
 
     def wrapper(*args, **kwargs):
@@ -11,8 +11,8 @@ def get_num_csv(func):
             reader = csv.reader(f)
             for i in reader:
                 args = map(int, i)
-                lst.append(func(*args, **kwargs))
-            return lst
+                res = func(*args, **kwargs)
+            return res
 
     return wrapper
 
