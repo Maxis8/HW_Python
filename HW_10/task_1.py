@@ -13,7 +13,7 @@ class Fish(Animals):
         self.depth = depth
 
     def unique_info(self):
-        return f'{self.name}: Глубина обитания: {self.depth}'
+        return f'Имя: {self.name}: Глубина обитания: {self.depth}'
 
 
 class Bird(Animals):
@@ -22,7 +22,7 @@ class Bird(Animals):
         self.wings = wings
 
     def unique_info(self):
-        return f' {self.name}: Размах крыльев: {self.wings}'
+        return f'Имя: {self.name}: Размах крыльев: {self.wings}'
 
 
 class Mammal(Animals):
@@ -32,22 +32,19 @@ class Mammal(Animals):
         self.coat = coat
 
     def unique_info(self):
-        return f'{self.name}: Размах крыльев: {self.coat}'
+        return f'Имя: {self.name}: Длина шерсти: {self.coat}'
 
 
-class AnimalFactory:
-    @staticmethod
-    def new_animal(animal_type, name, *args):
-        if animal_type == 'Fish':
-            return Fish(name, *args)
-        elif animal_type == 'Bird':
-            return Bird(name, *args)
-        elif animal_type == 'Mammal':
-            return Mammal(name, *args)
-        else:
-            return Animals(name)
+class AnimalFactory(Bird):
+    def __init__(self, name, wings):
+        super().__init__(name, wings)
+
+    def new_animal(self):
+        return self.name, self.wings
 
 
-new_mammal = AnimalFactory.new_animal('Mammal', 'Bear', 10)
-print(new_mammal.__dict__)
+new_a = AnimalFactory('Crow', 0.9)
+print(new_a.new_animal())
+print(new_a.unique_info())
+print(new_a.__dict__)
 
