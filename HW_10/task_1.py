@@ -18,11 +18,15 @@ class Fish(Animals):
 
 class Bird(Animals):
     def __init__(self, name, wings):
-        super().__init__(name)
+        # super().__init__(name)
+        self.name = name
         self.wings = wings
 
     def unique_info(self):
-        return f'Имя: {self.name}: Размах крыльев: {self.wings}'
+        return f'Name Bird: {self.name}: Размах крыльев: {self.wings}'
+
+    def __str__(self):
+        return f'Имя: {self.name}\nРазмах крыльев: {self.wings}\n'
 
 
 class Mammal(Animals):
@@ -35,16 +39,17 @@ class Mammal(Animals):
         return f'Имя: {self.name}: Длина шерсти: {self.coat}'
 
 
-class AnimalFactory(Bird):
-    def __init__(self, name, wings):
-        super().__init__(name, wings)
+class AnimalFactory:
+    def __init__(self, name, *args):
+        self.name = name
+        self.wings = args
 
     def new_animal(self):
-        return self.name, self.wings
+        return self.name(*self.wings)
 
 
-new_a = AnimalFactory('Crow', 0.9)
-print(new_a.new_animal())
-print(new_a.unique_info())
-print(new_a.__dict__)
+bird = Bird('Parrot', 0.5)
+print(bird)
+new_a = AnimalFactory(Bird, 'Crow', 0.9).new_animal()
+print(new_a)
 
