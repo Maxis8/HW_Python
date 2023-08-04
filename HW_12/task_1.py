@@ -86,3 +86,4 @@ p3 = Student("Петр", "Стогов", "Константинович")
 p1.on_display()
 p2.on_display()
 p3.on_display()
+
