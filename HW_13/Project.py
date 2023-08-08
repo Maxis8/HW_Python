@@ -1,3 +1,6 @@
+# Доработать класс Project
+# Доработайте классы исключения так, чтобы они выдали подробную информацию об ошибках.
+# Передавайте необходимые данные из основного кода проекта.
 import json
 from User import User
 from Exceptions import UserNotFoundError, LevelError, NotFoundError
@@ -75,3 +78,4 @@ with Project.load_js() as p:
     print(*p.users_list)
     p.remove_user("Bill", 2, 2)
     print(*p.users_list)
+

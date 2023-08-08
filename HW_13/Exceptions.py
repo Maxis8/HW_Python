@@ -23,3 +23,4 @@ class UserNotFoundError(BasicException):
 
     def __str__(self):
         return f"User {self.name} {self.u_id} not found! Access denied!!!"
+

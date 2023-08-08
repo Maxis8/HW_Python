@@ -9,3 +9,4 @@ class User:
 
     def __eq__(self, other):
         return self.u_id == other.u_id and self.name == other.name
+
