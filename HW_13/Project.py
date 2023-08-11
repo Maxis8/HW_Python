@@ -72,7 +72,7 @@ class Project:
 
 with Project.load_js() as p:
     print(*p.users_list)
-    p.enter("Roy", 3)
+    p.enter("Roy", 5)
     print(p)
     p.add_user('Max', 5, 2)
     print(*p.users_list)
